@@ -4,7 +4,7 @@
 
 (setf vec (rb-vector:rb-vector 1 2 "foo" 3.14))
 
-(rb-vector:conj vec "bar")
+(rb-vector:append vec "bar")
 
 (rb-vector:pop vec)
 
