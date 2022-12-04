@@ -1,4 +1,4 @@
-# cl-rb-vector
+# rb-vector
 
 This is an immutable vector data structure in Common Lisp. It's implemented as a
 radix balanced tree of width 32.
