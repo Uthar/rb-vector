@@ -1,27 +1,27 @@
 (require :asdf)
 (pushnew (truename "../") asdf:*central-registry*)
-(asdf:load-system :tuple)
+(asdf:load-system :rb-vector)
 
-(setf tup (tuple:tuple 1 2 "foo" 3.14))
+(setf vec (rb-vector:rb-vector 1 2 "foo" 3.14))
 
-(tuple:conj tup "bar")
+(rb-vector:conj vec "bar")
 
-(tuple:pop tup)
+(rb-vector:pop vec)
 
-(tuple:insert tup 0 "baz")
+(rb-vector:insert vec 0 "baz")
 
-(tuple:lookup tup 3)
+(rb-vector:lookup vec 3)
 
-(tuple:peek tup)
+(rb-vector:peek vec)
 
-(tuple:equal tup tup)
+(rb-vector:equal vec vec)
 
-(tuple:slice tup 1 3)
+(rb-vector:slice vec 1 3)
 
-(tuple:count tup)
+(rb-vector:count vec)
 
-(tuple:concat tup (tuple:tuple 42 43 44))
+(rb-vector:concat vec (rb-vector:rb-vector 42 43 44))
 
 ;; Optional `[` reader macro
-(asdf:load-system :tuple/reader)
-(tuple:equal [1 2 (+ 1 2)] (tuple:tuple 1 2 3))
+(asdf:load-system :rb-vector/reader)
+(rb-vector:equal [1 2 (+ 1 2)] (rb-vector:rb-vector 1 2 3))

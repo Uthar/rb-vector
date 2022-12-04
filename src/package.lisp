@@ -1,12 +1,12 @@
-(defpackage :tuple
+(defpackage :rb-vector
   (:use :cl)
   (:shadow :pop :count :equal :reduce :map :remove :append)
   (:export
 
    ;; Both a type and a creation function
-   :tuple
+   :rb-vector
 
-   ;; Functions for operating on tuples
+   ;; Functions for operating on rb-vectors
    :lookup
    :insert
    :append
@@ -24,5 +24,5 @@
    :filter
 
    ;; Utilities
-   :tuple->list
-   :sequence->tuple))
+   :to-list
+   :from-sequence))

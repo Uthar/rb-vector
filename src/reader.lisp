@@ -1,8 +1,8 @@
 ;; [1 2 (+ 3 4) 5] syntax
 
-(defun tuple-reader (stream char)
+(defun rb-vector-reader (stream char)
   (declare (ignore char))
-  `(tuple:tuple ,@(read-delimited-list #\] stream t)))
+  `(rb-vector:rb-vector ,@(read-delimited-list #\] stream t)))
 
-(set-macro-character #\[ 'tuple-reader)
+(set-macro-character #\[ 'rb-vector-reader)
 (set-macro-character #\] (get-macro-character #\) nil))

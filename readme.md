@@ -1,6 +1,7 @@
-# tuple
+# cl-rb-vector
 
-This is an immutable vector data structure in Common Lisp. It's implemented as a radix balanced tree of width 32.
+This is an immutable vector data structure in Common Lisp. It's implemented as a
+radix balanced tree of width 32.
 
 ## WARNING
 
@@ -11,29 +12,31 @@ This library is __EXPERIMENTAL__ and everything can change
 Load:
 
 ```
-(asdf:load-system :tuple)
+(asdf:load-system :rb-vector)
 ```
 
 Test:
 
 ```
-(asdf:test-system :tuple)
+(asdf:test-system :rb-vector)
 ```
 
 Benchmark:
 
 ```
-(asdf:load-system :tuple/bench)
+(asdf:load-system :rb-vector/bench)
 ```
 
 
 ## portability
 
- - SBCL
  - ABCL
- - ECL
  - CCL
+ - CLISP
  - Clasp
+ - ECL
+ - LispWorks
+ - SBCL
 
 ## learning resources
 

@@ -1,4 +1,4 @@
-(in-package :tuple)
+(in-package :rb-vector)
 
 (defun range* (n)
   (loop for x below n collect (random n)))
@@ -26,11 +26,11 @@
     (aref a n))))
 
 
-(defvar tup nil)
+(defvar vec nil)
 
 ;; 1kk random append
 (bench
-  (setf tup (cl:reduce #'append range :initial-value (tuple))))
+  (setf vec (cl:reduce #'append range :initial-value (rb-vector))))
 
 
 ;; 2kk random insert
@@ -40,7 +40,7 @@
 (bench
   (dotimes (_ 2)
   (dotimes (n (floor 1e6))
-    (insert tup n n))))
+    (insert vec n n))))
 
   ;; )
 
@@ -48,5 +48,5 @@
 (bench
   (dotimes (_ 10)
   (dotimes (n (floor 1e6))
-    (lookup tup n))))
+    (lookup vec n))))
 
