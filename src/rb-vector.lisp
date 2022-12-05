@@ -374,11 +374,12 @@ nodes plus the number of elements in the tail.
   (let ((a (cat-a rb-vector))
         (b (cat-b rb-vector)))
     (if (< index (count a))
-        (insert a index val)
-        (insert b (- index (count a)) val))))
+        (make-cat :a (insert a index val) :b b)                 
+        (make-cat :a a :b (insert b (- index (count a)) val)))))
 
 (defmethod append ((rb-vector %cat) val)
-  (append (cat-b rb-vector) val))
+  (make-cat :a (cat-a rb-vector)               
+            :b (append (cat-b rb-vector) val)))
 
 (defmethod count ((rb-vector %cat))
   (+ (count (cat-a rb-vector))

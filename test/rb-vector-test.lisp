@@ -113,3 +113,7 @@
   (is (rb-vector:equal (rb-vector 0 1 3 4) (rb-vector:remove (rb-vector 0 1 2 3 4) 2)))
   (is (rb-vector:equal (rb-vector 0 1 2 4) (rb-vector:remove (rb-vector 0 1 2 3 4) 3)))
   (is (rb-vector:equal (rb-vector 0 1 2 3) (rb-vector:remove (rb-vector 0 1 2 3 4) 4))))
+
+(test cat-test                                                           
+  (is (rb-vector:equal (rb-vector 1 10) (insert (remove (rb-vector 1 2 3) 1) 10)))   
+  (is (rb-vector:equal (rb-vector 1 3 10) (append (remove (rb-vector 1 2 3) 1) 10))))
